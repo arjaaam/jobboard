@@ -1,10 +1,9 @@
 <div class="ui container" align="center" style="padding-top: 20px">
-
   <div class="big ui orange animated fade button" tabindex="0" >
-  <div class="visible content">Post a job</div>
-  <div class="hidden content" >
-    <%= link_to "Click in", new_job_path %>
-  </div>
+    <div class="visible content">Post a job</div>
+      <div class="hidden content" >
+        <%= link_to "Click in", new_job_path %>
+      </div>
   </div>
 </div>
     <% @category.each do |kategori|  %>
@@ -12,31 +11,28 @@
             <% @job.each do |cat| %>
                 <% if komp.job_id==cat.id %>
                     <% if cat.category_id==kategori.id %>
-  <div class="ui form segment" style="padding-top: 20px">
-    <div class="ui feed" >
-      <div class="event">
-        <div class="label">
-
-        </div>
-        <div class="content">
-
-          <div class=" summary">
-              <%= komp.name %>
-              <%= link_to cat.title, job_path(cat.id) %>
-              <div class="date">
-                <%= days=(Date.current-cat.created_at.to_date).to_i %> days ago
-              </div>
-          </div>
-          <div class=" orange label">
-          <b> Category : <%= kategori.name %></b>
-          </div>
-        </div>
-      </div>
-    </div>
-
-  </div>
+                      <div class="ui form segment" style="padding-top: 20px">
+                        <div class="ui feed" >
+                          <div class="event">
+                            <div class="label">
+                            </div>
+                              <div class="content">
+                                <div class=" summary">
+                                    <%= komp.name %>
+                                    <%= link_to cat.title, job_path(cat.id) %>
+                                    <div class="date">
+                                      <%= days=(Date.current-cat.created_at.to_date).to_i %> days ago
+                                    </div>
+                                </div>
+                              <div class=" orange label">
+                                <b> Category : <%= kategori.name %></b>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+              <% end %>
             <% end %>
         <% end %>
     <% end %>
   <% end %>
-<% end %>

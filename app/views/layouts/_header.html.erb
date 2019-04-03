@@ -1,17 +1,14 @@
-
-
 <div class="ui grey one inverted  menu">
     <%= link_to "JobBoard", jobs_path, class: "item" %>
-
-<div class="ui  dropdown">
-  <input type="hidden" name="category_id">
-  <div class="item" name="category_id">Categories</div>
-  <div class="menu">
-      <% @category.each do |cat| %>
-          <%=   link_to cat.name, root_path(:kategorije => cat.id), class: "item" %>
-      <% end %>
-  </div>
- </div>
+      <div class="ui  dropdown">
+        <input type="hidden" name="category_id">
+          <div class="item" name="category_id">Categories</div>
+            <div class="menu">
+              <% @category.each do |cat| %>
+                  <%=   link_to cat.name, root_path(:kategorije => cat.id), class: "item" %>
+              <% end %>
+            </div>
+       </div>
   <div class="right menu">
     <div class="item">
       <div class="ui icon input">
@@ -19,6 +16,5 @@
         <i class="search link icon"></i>
       </div>
     </div>
-
   </div>
 </div>

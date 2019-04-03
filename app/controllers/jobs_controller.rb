@@ -1,6 +1,6 @@
 class JobsController < ApplicationController
   skip_before_action :verify_authenticity_token, raise: false
-  before_action :index_category#, only: [:new, :show, :create]
+  before_action :index_category
 
   def new
     @job = Job.new
@@ -12,14 +12,10 @@ class JobsController < ApplicationController
 
   def index
     if params[:kategorije]
-      #category=Category.find(params[:cat.id])
-
       @category_id=Category.find_by(id: params[:kategorije])
       @company = Company.all
       @job=Job.where(category_id: @category_id).order(created_at: :desc)
-      #  end
     else
-      #@category=Category.all
       @company = Company.all
       @job=Job.all.order(created_at: :desc)
     end
@@ -34,8 +30,7 @@ class JobsController < ApplicationController
           flash[:notice]="Job was successfully created"
           redirect_to jobs_path
         else
-          render 'new'
-          #  redirect_to new_job_path
+          render 'new'          
         end
   end
 

@@ -1,63 +1,55 @@
 <% if @job.errors.any? & @company.errors.any? %>
-<div class="ui form error">
-  <div class="ui error message">
+  <div class="ui form error">
+    <div class="ui error message">
       The form contains <%= pluralize(@job.errors.count + @company.errors.count, "error") %>.
-    <ul>
-    <% @job.errors.full_messages.each do |msg| %>
-      <li><%= msg %></li>
-    <% end %>
-    <% @company.errors.full_messages.each do |msg| %>
-      <li><%= msg %></li>
-    <% end %>
-    </ul>
-  </div>
+      <ul>
+        <% @job.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        <% @company.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
   </div>
 <% end %>
-
 <form class="ui form segment" name="newform" method="POST" align="center" action="/create" >
 <div class="container" align="center">
   <h4 class="ui dividing header">Basic Information</h4>
-  <div class=" ten wide field" >
-    <label>Title</label>
-      <div class=" field">
-        <input type="text" name="title" placeholder="example 'Designer'">
-      </div>
+    <div class=" ten wide field" >
+      <label>Title</label>
+        <div class=" field">
+          <input type="text" name="title" placeholder="example 'Designer'">
+        </div>
     </div>
-
     <div class="five wide field" >
       <label>Category</label>
-      <div class="ui fluid search selection dropdown">
-        <input type="hidden" name="category_id">
-        <i class="dropdown icon"></i>
-        <div class="default text" name="category_id">Select category</div>
-        <div class="menu">
-    <div class="item" data-value="1"><i></i>Design</div>
-    <div class="item" data-value="2"><i></i>Programming</div>
-    <div class="item" data-value="3"><i ></i>Customer Support</div>
-    <div class="item" data-value="4"><i ></i>Copywritting</div>
-    <div class="item" data-value="5"><i> </i>DevOps & SysAdmin</div>
-    <div class="item" data-value="6"><i> </i>Sales & Marketing</div>
-    <div class="item" data-value="7"><i> </i>Business & Management</div>
-    <div class="item" data-value="8"><i ></i>Finance & Legal</div>
-    <div class="item" data-value="9"><i> </i>Product</div>
-    <div class="item" data-value="10"><i> </i>All other</div>
-  </div>
+        <div class="ui fluid search selection dropdown">
+          <input type="hidden" name="category_id">
+          <i class="dropdown icon"></i>
+          <div class="default text" name="category_id">Select category</div>
+            <div class="menu">
+              <div class="item" data-value="1"><i></i>Design</div>
+              <div class="item" data-value="2"><i></i>Programming</div>
+              <div class="item" data-value="3"><i ></i>Customer Support</div>
+              <div class="item" data-value="4"><i ></i>Copywritting</div>
+              <div class="item" data-value="5"><i> </i>DevOps & SysAdmin</div>
+              <div class="item" data-value="6"><i> </i>Sales & Marketing</div>
+              <div class="item" data-value="7"><i> </i>Business & Management</div>
+              <div class="item" data-value="8"><i ></i>Finance & Legal</div>
+              <div class="item" data-value="9"><i> </i>Product</div>
+              <div class="item" data-value="10"><i> </i>All other</div>
+            </div>
        </div>
     </div>
     <div class="five wide field">
       <label>Job type</label>
       <select class="ui fluid dropdown" name="jobtype" placeholder="Select type">
-
         <option >Full time</option>
         <option  >Contract</option>
-
       </select>
     </div>
-
-
   <h4 class="ui dividing header">Location information</h4>
-
-
     <div class="five wide field">
       <label>Headquarter</label>
       <input type="text" name="headquarter"  placeholder="location of job">
@@ -66,94 +58,88 @@
       <label>Region</label>
       <div class="ui selection dropdown">
         <input type="hidden" name="region">
-        <div class="default text">select region</div>
-        <i class="dropdown icon"></i>
-        <div class="menu">
-          <div class="item" data-value="hnk">
-            HNK
-          </div>
-          <div class="item" data-value="zhk">
-            ZHK
-          </div>
-          <div class="item" data-value="ks">
-            KS
-          </div>
-          <div class="item" data-value="usk">
-            USK
-          </div>
-          <div class="item" data-value="pk">
-            PK
-          </div>
-          <div class="item" data-value="zdk">
-            ZDK
-          </div>
-          <div class="item" data-value="bpk">
-            BPK
-          </div>
-          <div class="item" data-value="tk">
-            TK
-          </div>
-          <div class="item" data-value="sbk">
-            SBK
-          </div>
-        </div>
+          <div class="default text">select region</div>
+            <i class="dropdown icon"></i>
+            <div class="menu">
+              <div class="item" data-value="hnk">
+                HNK
+              </div>
+              <div class="item" data-value="zhk">
+                ZHK
+              </div>
+              <div class="item" data-value="ks">
+                KS
+              </div>
+              <div class="item" data-value="usk">
+                USK
+              </div>
+              <div class="item" data-value="pk">
+                PK
+              </div>
+              <div class="item" data-value="zdk">
+                ZDK
+              </div>
+              <div class="item" data-value="bpk">
+                BPK
+              </div>
+              <div class="item" data-value="tk">
+                TK
+              </div>
+              <div class="item" data-value="sbk">
+                SBK
+              </div>
+            </div>
       </div>
     </div>
-
    <h4 class="ui dividing header">Apply link</h4>
    <div class="ten wide field" >
        <div class="ui labeled input">
-     <div class="ui label" >
-       http://
-     </div>
-     <input type="text" name="applylink" placeholder="apply_link.com">
-   </div>
+           <div class="ui label" >
+             http://
+           </div>
+           <input type="text" name="applylink" placeholder="apply_link.com">
+        </div>
   </div>
    <h4 class="ui dividing header">Description</h4>
   </br></br></br></br>
-
   <input id="x"  type="hidden" name="description">
-   <trix-editor input="x"></trix-editor>
-
-   <h4 class="ui dividing header">Company Information</h4>
-   <div class=" twelve wide field" >
+  <trix-editor input="x"></trix-editor>
+  <h4 class="ui dividing header">Company Information</h4>
+  <div class=" twelve wide field" >
      <label>Name</label>
        <div class=" field">
          <input type="text" name="name" placeholder="example 'Wizard Health doo'">
        </div>
-     </div>
-     <div class=" twelve wide field" >
-       <label>Company statement</label>
-         <div class=" field">
+  </div>
+  <div class=" twelve wide field" >
+      <label>Company statement</label>
+      <div class=" field">
            <input type="text" name="company_statement" placeholder="Enter company statement/vision">
-         </div>
-       </div>
-
-   <h4 class="ui dividing header">Logo</h4>
-       <div class="five wide field">
-         <input type="file" name="logo" >
-
       </div>
-
-       <h4 class="ui dividing header">Website</h4>
-       <div class="ten wide field" >
+  </div>
+  <h4 class="ui dividing header">Logo</h4>
+      <div class="five wide field">
+         <input type="file" name="logo" >
+      </div>
+   <h4 class="ui dividing header">Website</h4>
+      <div class="ten wide field" >
            <div class="ui labeled input">
-         <div class="ui label" >
-           http://
+             <div class="ui label" >
+               http://
+             </div>
+             <input type="text" name="url" placeholder="companysite.com">
          </div>
-         <input type="text" name="url" placeholder="companysite.com">
-       </div>
       </div>
       <div class=" ten wide field" >
         <label>Email</label>
           <div class=" field">
             <input type="text" name="email" placeholder="Example 'wizard@gmail.com'">
           </div>
-        </div>
-        <h4 class="ui dividing header">Details about company</h4>
-       </br></br></br></br>
-        <input id="x"  type="hidden" name="company_description">
-         <trix-editor input="x"></trix-editor>
-      <input type="submit" value="Submit" class="ui button" />
+      </div>
+  <h4 class="ui dividing header">Details about company</h4>
+  </br></br></br></br>
+  <input id="x"  type="hidden" name="company_description">
+  <trix-editor input="x"></trix-editor>
+  <input type="submit" value="Submit" class="ui button" />
 </div>
 </form>
