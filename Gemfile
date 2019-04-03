@@ -10,6 +10,7 @@ end
 gem 'rails', '~> 5.2.0.beta1'
 # Use sqlite3 as the database for Active Record
 #gem 'sqlite3'
+
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
 # Use SCSS for stylesheets
@@ -32,8 +33,6 @@ gem 'rails-controller-testing'
 gem 'bcrypt', '~> 3.1.7'
 gem 'semantic-ui-sass'
 gem 'jquery-rails'
-
-
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

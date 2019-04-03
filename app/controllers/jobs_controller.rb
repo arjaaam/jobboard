@@ -1,6 +1,6 @@
 class JobsController < ApplicationController
   skip_before_action :verify_authenticity_token, raise: false
-  before_action :index_category
+  before_action :index_category#, only: [:new, :show, :create]
 
   def new
     @job = Job.new
@@ -11,13 +11,18 @@ class JobsController < ApplicationController
   end
 
   def index
-    @company = Company.all
-    @job=Job.all.order(created_at: :desc)#.group(@category.name)#.count.map{ |k,v| k << v }#.map{ |k,v| [k.first,k.last,v.length]}
-      #(:category_id)#.group_by{:title}#.include(:jobs)
-      #  else
-      #@category_id=Category.find_by(name: params[:category]).id
-      #  @job=Job.where[category_id: @category_id].order(created_at: :desc)
+    if params[:kategorije]
+      #category=Category.find(params[:cat.id])
+
+      @category_id=Category.find_by(id: params[:kategorije])
+      @company = Company.all
+      @job=Job.where(category_id: @category_id).order(created_at: :desc)
       #  end
+    else
+      #@category=Category.all
+      @company = Company.all
+      @job=Job.all.order(created_at: :desc)
+    end
   end
 
   def create
