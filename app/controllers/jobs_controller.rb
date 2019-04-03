@@ -19,6 +19,15 @@ class JobsController < ApplicationController
       @company = Company.all
       @job=Job.all.order(created_at: :desc)
     end
+    if params[:search]
+      if Company.where("name LIKE ? ", "%#{params[:search]}%").count > 0
+        @company = Company.where("name LIKE ? ", "%#{params[:search]}%")
+        @job=Job.all.order(created_at: :desc)
+      else
+        @company = Company.all
+        @job = Job.where("title LIKE ? ", "%#{params[:search]}%")
+      end
+    end
   end
 
   def create
@@ -26,12 +35,12 @@ class JobsController < ApplicationController
       @job.save
       @company=Company.new(company_params)
       @company.job_id=@job.id
-        if @company.save
-          flash[:notice]="Job was successfully created"
-          redirect_to jobs_path
-        else
-          render 'new'          
-        end
+      if @company.save
+        flash[:notice]="Job was successfully created"
+        redirect_to jobs_path
+      else
+          render 'new'
+      end
   end
 
   private

@@ -6,6 +6,21 @@
       </div>
   </div>
 </div>
+<% if @job.empty? %>
+<div class="ui nov container"  style="padding-top: 40px">
+  <div class="ui orange message">
+    <i class="close icon"></i>
+      <div class="header">
+          There aren’t any jobs that match your search.
+      </div> </br>
+    <ul class="list">
+      <li>Be less specific. Example: "Data" instead of “Data entry”</li>
+      <li>Check your spelling. Even the best spellers make mistakes.</li>
+    </ul>
+  </div>
+</div>
+<% else %>
+
     <% @category.each do |kategori|  %>
           <% @company.each do |komp| %>
             <% @job.each do |cat| %>
@@ -36,3 +51,4 @@
         <% end %>
     <% end %>
   <% end %>
+<% end %>
