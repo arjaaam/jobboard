@@ -33,6 +33,7 @@ gem 'rails-controller-testing'
 gem 'bcrypt', '~> 3.1.7'
 gem 'semantic-ui-sass'
 gem 'jquery-rails'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

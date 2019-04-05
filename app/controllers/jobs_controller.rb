@@ -50,7 +50,7 @@ class JobsController < ApplicationController
   end
 
   def company_params
-    params.permit(:name,:company_statement,:logo,:url,:email,:company_description)
+    params.permit(:name,:company_statement,:url,:email,:company_description,:image)
   end
 
   def index_category

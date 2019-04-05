@@ -15,9 +15,10 @@
 //= require turbolinks
 // Loads all Semantic javascripts
 //= require semantic-ui
+//= require activestorage
 //= require_tree .
 //= require trix
-//= require activestorage
+
 
 $(document).on('turbolinks:load',function(){
   $('.ui.dropdown')

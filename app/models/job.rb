@@ -8,7 +8,6 @@ class Job < ApplicationRecord
     too_long: "%{count} characters is the maximum allowed" }
 
   def self.search(search)
-    # Title is for the above case, the OP incorrectly had 'name'
     where("title LIKE ?", "%#{search}%")
   end
 

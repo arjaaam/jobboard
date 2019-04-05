@@ -13,7 +13,7 @@
     </div>
   </div>
 <% end %>
-<form class="ui form segment" name="newform" method="POST" align="center" action="/create" >
+<form class="ui form segment" name="newform" method="POST" align="center" action="/create"  >
 <div class="container" align="center">
   <h4 class="ui dividing header">Basic Information</h4>
     <div class=" ten wide field" >
@@ -117,10 +117,7 @@
            <input type="text" name="company_statement" placeholder="Enter company statement/vision">
       </div>
   </div>
-  <h4 class="ui dividing header">Logo</h4>
-      <div class="five wide field">
-         <input type="file" name="logo" >
-      </div>
+
    <h4 class="ui dividing header">Website</h4>
       <div class="ten wide field" >
            <div class="ui labeled input">
@@ -138,8 +135,12 @@
       </div>
   <h4 class="ui dividing header">Details about company</h4>
   </br></br></br></br>
-  <input id="x"  type="hidden" name="company_description">
-  <trix-editor input="x"></trix-editor>
+  <input id="y"  type="hidden" name="company_description">
+  <trix-editor input="y"></trix-editor>
+  <h4 class="ui dividing header">Logo</h4>
+  <div class="five wide field" >
+    <<input type="file" name="image" >
+  </div>
   <input type="submit" value="Submit" class="ui button" />
 </div>
 </form>
