@@ -5,6 +5,8 @@ Rails.application.routes.draw do
    post    '/create',  to: 'jobs#create'
  resources :jobs
  resources :categories
+ resources :active_storage_blobs
+ resources :active_storage_attachments
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

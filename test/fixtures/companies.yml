@@ -1,19 +1,17 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
+prvakompanija:
   job_id: 1
-  name: MyString
-  company_statement: MyString
-  logo: 
-  url: MyString
-  email: MyString
-  company_description: MyText
+  name: Novakompanija
+  company_statement: Bez ove kompanije nema uspjeha .. nikad nikad nikad nikad
+  url: https://www.facebook.com
+  email: majra@hotmail.com
+  company_description: Da da da da da da da da da da da da da da da d ad a da d ad a da d a
 
 two:
   job_id: 1
   name: MyString
   company_statement: MyString
-  logo: 
   url: MyString
   email: MyString
   company_description: MyText

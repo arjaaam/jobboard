@@ -1,5 +1,5 @@
 <div class="ui container" align="center" style="padding-top: 20px">
-  <div class="big ui orange animated fade button" tabindex="0" >
+  <div class="big ui orange animated fade button" tabindex="0" name="clickon">
     <div class="visible content">Post a job</div>
       <div class="hidden content" >
         <%= link_to "Click in", new_job_path %>
@@ -22,16 +22,18 @@
 <% else %>
 
     <% @category.each do |kategori|  %>
+      <div class="ui nov container">
           <% @company.each do |komp| %>
             <% @job.each do |cat| %>
+
                 <% if komp.job_id==cat.id %>
                     <% if cat.category_id==kategori.id %>
                       <div class="ui form segment" style="padding-top: 20px">
                         <div class="ui feed" >
                           <div class="event">
-                            <div class="label">
-                              <% image_tag komp.image if komp.image.attached?  %>
-                            </div>
+
+                              <%= image_tag(komp.image, size: "40") %>
+
                               <div class="content">
                                 <div class=" summary">
                                     <%= komp.name %>
@@ -47,6 +49,8 @@
                           </div>
                         </div>
                     </div>
+                    </div>
+
               <% end %>
             <% end %>
         <% end %>

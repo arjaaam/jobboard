@@ -13,34 +13,27 @@
     </div>
   </div>
 <% end %>
-<form class="ui form segment" name="newform" method="POST" align="center" action="/create"  >
 <div class="container" align="center">
+<%= form_with url: jobs_path, :html => {:class => "ui form"} do |form| %>
+
   <h4 class="ui dividing header">Basic Information</h4>
-    <div class=" ten wide field" >
+    <div class=" five wide field" >
       <label>Title</label>
         <div class=" field">
-          <input type="text" name="title" placeholder="example 'Designer'">
+          <%= form.text_field :title, class:"item" %>
         </div>
     </div>
     <div class="five wide field" >
       <label>Category</label>
-        <div class="ui fluid search selection dropdown">
+
           <input type="hidden" name="category_id">
-          <i class="dropdown icon"></i>
-          <div class="default text" name="category_id">Select category</div>
+
+          <div class="default text" name="category_id"></div>
             <div class="menu">
-              <div class="item" data-value="1"><i></i>Design</div>
-              <div class="item" data-value="2"><i></i>Programming</div>
-              <div class="item" data-value="3"><i ></i>Customer Support</div>
-              <div class="item" data-value="4"><i ></i>Copywritting</div>
-              <div class="item" data-value="5"><i> </i>DevOps & SysAdmin</div>
-              <div class="item" data-value="6"><i> </i>Sales & Marketing</div>
-              <div class="item" data-value="7"><i> </i>Business & Management</div>
-              <div class="item" data-value="8"><i ></i>Finance & Legal</div>
-              <div class="item" data-value="9"><i> </i>Product</div>
-              <div class="item" data-value="10"><i> </i>All other</div>
+                 <%= form.collection_select :category_id, Category.all, :id, :name %>
+
             </div>
-       </div>
+
     </div>
     <div class="five wide field">
       <label>Job type</label>
@@ -49,16 +42,16 @@
         <option  >Contract</option>
       </select>
     </div>
-  <h4 class="ui dividing header">Location information</h4>
+  <h4 class="ui dividing header">Location Information</h4>
     <div class="five wide field">
       <label>Headquarter</label>
-      <input type="text" name="headquarter"  placeholder="location of job">
+              <%= form.text_field :headquarter %>
     </div>
     <div class="five wide field">
       <label>Region</label>
       <div class="ui selection dropdown">
         <input type="hidden" name="region">
-          <div class="default text">select region</div>
+          <div class="default text">Select region</div>
             <i class="dropdown icon"></i>
             <div class="menu">
               <div class="item" data-value="hnk">
@@ -97,50 +90,57 @@
            <div class="ui label" >
              http://
            </div>
-           <input type="text" name="applylink" placeholder="apply_link.com">
+                   <%= form.text_field :applylink %>
         </div>
   </div>
    <h4 class="ui dividing header">Description</h4>
   </br></br></br></br>
   <input id="x"  type="hidden" name="description">
   <trix-editor input="x"></trix-editor>
+          <%= form.text_field :description %>
   <h4 class="ui dividing header">Company Information</h4>
-  <div class=" twelve wide field" >
+  <div class=" ten wide field" >
      <label>Name</label>
        <div class=" field">
-         <input type="text" name="name" placeholder="example 'Wizard Health doo'">
+                <%= form.text_field :name %>
        </div>
   </div>
-  <div class=" twelve wide field" >
+  <div class=" ten wide field" >
       <label>Company statement</label>
       <div class=" field">
-           <input type="text" name="company_statement" placeholder="Enter company statement/vision">
+                   <%= form.text_field :company_statement %>
       </div>
   </div>
 
    <h4 class="ui dividing header">Website</h4>
-      <div class="ten wide field" >
+      <div class="five wide field" >
            <div class="ui labeled input">
              <div class="ui label" >
                http://
              </div>
-             <input type="text" name="url" placeholder="companysite.com">
+                <%= form.text_field :url %>
          </div>
       </div>
-      <div class=" ten wide field" >
+      <div class=" five wide field" >
         <label>Email</label>
           <div class=" field">
-            <input type="text" name="email" placeholder="Example 'wizard@gmail.com'">
+        <%= form.text_field :email, id: :email, class: :email %>
           </div>
       </div>
   <h4 class="ui dividing header">Details about company</h4>
   </br></br></br></br>
   <input id="y"  type="hidden" name="company_description">
+          <%= form.text_field :company_description %>
   <trix-editor input="y"></trix-editor>
   <h4 class="ui dividing header">Logo</h4>
   <div class="five wide field" >
-    <<input type="file" name="image" >
+        <%= form.file_field :image %>
   </div>
-  <input type="submit" value="Submit" class="ui button" />
+
+  <%= form.submit :Save%>
+
+
+
 </div>
-</form>
+
+<% end %>

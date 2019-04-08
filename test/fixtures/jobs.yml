@@ -1,13 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  title: MyString
+prviposao:
+  title: Data entry
   category_id: 1
-  jobtype: MyString
-  headquarter: MyString
-  region: MyString
-  applylink: MyString
-  description: MyText
+  jobtype: Full time
+  headquarter: Jablanica
+  region: Jablanica
+  applylink: https://www.nemasajta.com
+  description: Nenenenenenenenenennenenenen enenenenenenennenenenenennenenenennenene
 
 two:
   title: MyString
