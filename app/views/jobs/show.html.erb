@@ -6,7 +6,7 @@
           <div class="big ui grey animated fade button" tabindex="0" name="clickon">
             <div class="visible content">Apply</div>
               <div class="hidden content" >
-                  <%= link_to "Apply now", @job.applylink %>
+                  <%= link_to "Apply now", @job.applylink, target: :_blank %>
               </div>
             </div>
           </div>
@@ -18,7 +18,7 @@
               <div class="content">
                 <button class="ui right floated active button">
                   <i class="user icon"></i>
-                    <%= link_to "Apply link", @job.applylink, class: "item" %>
+                    <%= link_to "Apply link", @job.applylink, class: "item",target: :_blank %>
                 </button>
                 <button class="ui right floated active button">
                   <i class="eye icon"></i>
@@ -35,7 +35,7 @@
                         </div>
                   </div>
                   <div class="ui right floated">
-                        <%=   link_to "View all "+cat.name+ " jobs", root_path(:kategorije => cat.id), class: "item" %>
+                        <%=   link_to "View all "+cat.name+ " jobs", root_path(:kategorije => cat.id), class: "item",target: :_blank %>
                   </div>
                 </div>
               </div>
