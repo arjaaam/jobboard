@@ -20,20 +20,15 @@
   </div>
 </div>
 <% else %>
-
     <% @category.each do |kategori|  %>
-      <div class="ui nov container">
           <% @company.each do |komp| %>
             <% @job.each do |cat| %>
-
                 <% if komp.job_id==cat.id %>
                     <% if cat.category_id==kategori.id %>
                       <div class="ui form segment" style="padding-top: 20px">
                         <div class="ui feed" >
                           <div class="event">
-
                               <%= image_tag(komp.image, size: "40") %>
-
                               <div class="content">
                                 <div class=" summary">
                                     <%= komp.name %>
@@ -49,11 +44,9 @@
                           </div>
                         </div>
                     </div>
-                    </div>
-
-              <% end %>
             <% end %>
         <% end %>
+      <% end %>
     <% end %>
   <% end %>
 <% end %>

@@ -19,7 +19,8 @@ gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
-gem 'trix-rails', '~> 0.11.4.1'
+
+gem 'trix-rails', require: 'trix'
 #gem 'trix', '~> 0.11.1'
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'

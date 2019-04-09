@@ -12,7 +12,7 @@
  *
  *= require_tree .
  *= require_self
-
+*= require trix
  */
  .ui.form{
    align: center;
@@ -87,7 +87,7 @@
 }
 
 input[type=submit] {
-  background-color: orange;
+  background-color: grey;
   color: white;
   padding: 12px 20px;
   border: none;

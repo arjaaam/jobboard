@@ -1,3 +1,68 @@
-<div class="ui container" align="center" style="padding-top: 20px">
-   <h1> Ovo je za ispis o poslu </h1>
-</div>
+<% @category.each do |cat| %>
+  <% @company.each do |komp| %>
+    <% if komp.job_id==@job.id %>
+      <% if cat.id==@job.category_id %>
+        <div class="ui container" align="center" style="padding-top: 20px">
+          <div class="big ui grey animated fade button" tabindex="0" name="clickon">
+            <div class="visible content">Apply</div>
+              <div class="hidden content" >
+                  <%= link_to "Apply now", @job.applylink %>
+              </div>
+            </div>
+          </div>
+          <div class="ui items" style="padding-top:20px">
+            <div class="item">
+              <a class="ui small image">
+                <%= image_tag(komp.image, size: "50") %>
+              </a>
+              <div class="content">
+                <button class="ui right floated active button">
+                  <i class="user icon"></i>
+                    <%= link_to "Apply link", @job.applylink, class: "item" %>
+                </button>
+                <button class="ui right floated active button">
+                  <i class="eye icon"></i>
+                    <%= link_to "Company site", komp.url, class: "item" %>
+                </button>
+                <a class="header">   <%= @job.title %></a></br>
+                  <div class="description">
+                    <p><label><b>Region: </b></label>
+                     <%= @job.region %> </p>
+                    <p>  <label><b>Headquarter: </b></label>
+                      <%= @job.headquarter %></p>
+                        <div class="date"><b>Posted: </b>
+                          <%= cat.created_at.to_date %>
+                        </div>
+                  </div>
+                  <div class="ui right floated">
+                        <%=   link_to "View all "+cat.name+ " jobs", root_path(:kategorije => cat.id), class: "item" %>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="ui section divider"></div>
+            <div class="ui items">
+              <div class="item">
+                <div class="content">
+                  <a class="header">   About role </a></br>
+                  <div class="description">
+                    <p><%= @job.description %></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="ui section divider"></div>
+              <div class="ui items">
+                <div class="item">
+                  <div class="content">
+                    <a class="header">  <%= komp.name %><br> </a></br>
+                    <div class="description">
+                      <p><%= komp.company_description %></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+     <% end %>
+    <% end %>
+  <% end %>
+<% end %>

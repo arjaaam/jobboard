@@ -8,6 +8,10 @@ class JobsController < ApplicationController
   end
 
   def show
+    @category=Category.all
+    @job = Job.find(params[:id])
+    @job_id=Job.find_by(id: params[:id])
+    @company=Company.where(job_id: @job_id)
   end
 
   def index
