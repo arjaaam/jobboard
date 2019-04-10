@@ -30,6 +30,8 @@
                      <%= @job.region %> </p>
                     <p>  <label><b>Headquarter: </b></label>
                       <%= @job.headquarter %></p>
+                      <p>  <label><b>Email: </b></label>
+                        <%= komp.email %></p>
                         <div class="date"><b>Posted: </b>
                           <%= cat.created_at.to_date %>
                         </div>
@@ -46,7 +48,10 @@
                 <div class="content">
                   <a class="header">   About role </a></br>
                   <div class="description">
-                    <p><%= @job.description %></p>
+
+                      <trix-content>
+                        <%= @job.description.html_safe %>
+                      </trix-content>
                   </div>
                 </div>
               </div>
@@ -56,10 +61,11 @@
                 <div class="item">
                   <div class="content">
                     <a class="header">  <%= komp.name %><br> </a></br>
-                    <div class="description">
-                      <p><%= komp.company_description %></p>
-                    </div>
-                </div>
+                      <p><%= komp.company_statement %></p>
+                      <div class="trix-content">
+                      <%= komp.company_description.html_safe %>
+                      </div>
+                  </div>
             </div>
         </div>
      <% end %>

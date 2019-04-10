@@ -101,3 +101,7 @@ input[type=text] {
   background-repeat: no-repeat;
   border-radius: 8px;
 }
+
+.ui form segment {
+  width: 50%;
+}

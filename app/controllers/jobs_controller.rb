@@ -44,7 +44,7 @@ class JobsController < ApplicationController
         flash[:notice]="Job was successfully created"
         redirect_to jobs_path
       else
-          render 'new'
+        render 'new'
       end
   end
 

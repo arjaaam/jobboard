@@ -6,6 +6,29 @@
       </div>
   </div>
 </div>
+<div class="ui container" style="padding-top:20px">
+<%= form_with url: 'users#create', :html => {:class => "ui form"} do |form| %>
+   <div class="inline fields">
+    <div class="five wide field">
+      <label>Category</label>
+      <input type="hidden" name="category_id">
+      <div class="default text" name="category_id"></div>
+          <div class="menu">
+             <%= form.collection_select :category_id, Category.all, :id, :name %>
+          </div>
+      </div>
+    <div class="eight wide field">
+      <label>sent to: </label>
+    <%= form.text_field :email %>
+    </div>
+      <label>every day! </label>
+      <%= form.submit :Subscribe%>
+  </div>
+</div>
+<div class="ui horizontal divider" style="padding-top: 20px">
+  <i class="tag icon"></i>
+<% end %>
+</div>
 <% if @job.empty? %>
 <div class="ui nov container"  style="padding-top: 40px">
   <div class="ui orange message">
@@ -25,11 +48,13 @@
             <% @job.each do |cat| %>
                 <% if komp.job_id==cat.id %>
                     <% if cat.category_id==kategori.id %>
-                      <div class="ui form segment" style="padding-top: 20px">
-                        <div class="ui feed" >
-                          <div class="event">
-                              <%= image_tag(komp.image, size: "40") %>
-                              <div class="content">
+                      <div class="ui form segment" style="padding-top: 20px" >
+                        <div class="ui large feed" style=" height:50px" >
+                          <div class="event" style="padding-left:20px">
+                             <div class="image" style="padding-bottom: 20px">
+                              <%= image_tag(komp.image, size: "45") %>
+                              </div>
+                              <div class="content" style="padding-left:30px">
                                 <div class=" summary">
                                     <%= komp.name %>
                                     <%= link_to cat.title, job_path(cat.id) %>
