@@ -1,7 +1,7 @@
 class UserMailer < ApplicationMailer
   default from: 'jobboard@example.com'
 
-  def welcome_email
+  def everyday_email
     @user = params[:user]
     mail(to: @user.email, subject: 'List jobs')
   end
