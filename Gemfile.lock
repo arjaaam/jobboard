@@ -101,7 +101,7 @@ GEM
     nio4r (2.3.1)
     nokogiri (1.10.2)
       mini_portile2 (~> 2.4.0)
-    postgres-pr (0.7.0)
+    pg (1.1.4)
     public_suffix (3.0.3)
     puma (3.12.1)
     rack (2.0.7)
@@ -169,7 +169,6 @@ GEM
       actionpack (>= 4.0)
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
-    sqlite3 (1.4.0)
     thor (0.20.3)
     thread_safe (0.3.6)
     tilt (2.0.9)
@@ -204,7 +203,7 @@ DEPENDENCIES
   jbuilder (~> 2.5)
   jquery-rails
   listen (>= 3.0.5, < 3.2)
-  postgres-pr
+  pg
   puma (~> 3.7)
   rails (~> 5.2.3)
   rails-controller-testing
@@ -213,7 +212,6 @@ DEPENDENCIES
   semantic-ui-sass
   spring
   spring-watcher-listen (~> 2.0.0)
-  sqlite3
   trix-rails
   turbolinks (~> 5)
   tzinfo-data
