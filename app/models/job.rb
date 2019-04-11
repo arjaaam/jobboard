@@ -5,7 +5,7 @@ class Job < ApplicationRecord
   validates :headquarter, length: { minimum: 3, maximum: 20 }
   validates :applylink, length: { minimum: 7}
   validates :description, length: { minimum: 20,
-    too_long: "%{count} characters is the maximum allowed" }
+  too_long: "%{count} characters is the maximum allowed" }
 
   def self.search(search)
     where("title LIKE ?", "%#{search}%")
