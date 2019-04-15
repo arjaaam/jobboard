@@ -23,6 +23,8 @@ gem 'semantic-ui-sass'
 gem 'jquery-rails'
 gem 'whenever', '~> 0.9.4'
 gem 'pg'
+gem 'aws-sdk-s3', require: false
+
 group :development, :test do
   gem 'sqlite3', '1.3.13'
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
