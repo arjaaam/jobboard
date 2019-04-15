@@ -5,9 +5,10 @@ local:
 test:
   service: Disk
   root: <%= Rails.root.join("tmp/storage") %>
+
 amazon:
   service: S3
-  access_key_id: <%= Rails.application.secrets.dig(:aws, :access_key_id) %>
-  secret_access_key: <%= Rails.application.secrets.dig(:aws, :secret_access_key) %>
-  region: us-east-1
-  bucket: your_own_bucket
+  access_key_id: "AKIA534G2NBSOAOFPDWW"
+  secret_access_key: "G27t0/hhld5v+tjDhufvnVii7kGgSY29CZbCtqiM"
+  region: "us-west-1"
+  bucket: ""
