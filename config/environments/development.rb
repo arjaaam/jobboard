@@ -12,6 +12,7 @@ Rails.application.configure do
   config.action_mailer.default_url_options = { :host => 'http://localhost:3000'}
   # Show full error reports.
   config.consider_all_requests_local = true
+  config.active_storage.service = :local
 
   # Enable/disable caching. By default caching is disabled.
   if Rails.root.join('tmp/caching-dev.txt').exist?
@@ -52,5 +53,4 @@ Rails.application.configure do
   # Use an evented file watcher to asynchronously detect changes in source code,
   # routes, locales, etc. This feature depends on the listen gem.
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
-  config.active_storage.service = :local
 end

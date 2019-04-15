@@ -39,7 +39,7 @@ class JobsController < ApplicationController
       @job.save
       @company=Company.new(company_params)
       @company.job_id=@job.id
-      @company.image.attach(params[:image])
+  #    @company.image.attach(params[:image])
       if @company.save
         flash[:notice]="Job was successfully created"
         redirect_to jobs_path
@@ -55,7 +55,7 @@ class JobsController < ApplicationController
   end
 
   def company_params
-    params.permit(:name,:company_statement,:url,:email,:company_description)
+    params.permit(:name,:company_statement,:url,:email,:company_description,:image)
   end
 
   def index_category
