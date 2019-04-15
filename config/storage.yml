@@ -11,4 +11,4 @@ amazon:
   access_key_id: "AKIA534G2NBSOAOFPDWW"
   secret_access_key: "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"
   region: "eu-west-3"
-  bucket: "eu-west-3.amazonaws.com"
+  bucket: "s3-eu-west-3.amazonaws.com"
