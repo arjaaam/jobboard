@@ -6,8 +6,4 @@ class UserMailer < ApplicationMailer
     mail(to: @user.email, subject: 'Every day email')
   end
   
-
-
-
-
 end
