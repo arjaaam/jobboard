@@ -11,4 +11,4 @@ amazon:
   access_key_id: <%= Rails.application.secrets.dig(:aws, :access_key_id) %>
   secret_access_key: <%= Rails.application.secrets.dig(:aws, :secret_access_key) %>
   region: eu-west-3
-  bucket: arjaaam
+  bucket: <%= Rails.application.secrets.dig(:aws, :bucket) %>
