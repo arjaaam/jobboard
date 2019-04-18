@@ -4,10 +4,22 @@
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
   </head>
   <body>
-    <h1>Welcome to example.com, <%= @user.email %></h1>
-    <p>
-      
-    </p>
+    <h1>Welcome to JobBoard application, <%= @user.email %></h1>
+    <p>There are new jobs for you:
+        <% @company.each do |komp| %>
+          <% @job.each do |jobic| %>
+            <% if komp.job_id==jobic.id %>
+              <div class="content">
+                <div> Job name: <%= jobic.title %></div>
+                <div>   Posted date : <%= jobic.created_at.to_date %></div>
+                <div> Company name : <%= komp.name %> </div>
+                <a class="ui small image">
+                  <%= image_tag(komp.image, size: "50") %>
+                </a>
+              </div>
+          <% end %>
+        <% end %>
+      <% end %>
     <p>
     </p>
     <p>Thanks for joining and have a great day!</p>
