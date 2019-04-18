@@ -1,5 +1,5 @@
 class UserMailer < ApplicationMailer
-  default from: 'jobboard@example.com'
+#  default from: 'jobboard@example.com'
   #layout 'mailer'
   def everyday_email(user)
     @user = user

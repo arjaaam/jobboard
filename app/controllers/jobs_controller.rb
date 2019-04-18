@@ -39,7 +39,6 @@ class JobsController < ApplicationController
       @job.save
       @company=Company.new(company_params)
       @company.job_id=@job.id
-  #    @company.image.attach(params[:image])
       if @company.save
         flash[:notice]="Job was successfully created"
         redirect_to jobs_path
