@@ -11,7 +11,6 @@ class UsersController < ApplicationController
     @user=User.new(user_params)
     if @user.save
       flash[:notice]="User was successfully created"
-
       UserMailer.everyday_email(@user).deliver
       redirect_to jobs_path
     else
