@@ -8,7 +8,7 @@ class JobsController < ApplicationController
   end
 
   def show
-    @category=Category.all
+    @category=Category.all.order(created_at: :desc)
     @job = Job.find(params[:id])
     @job_id=Job.find_by(id: params[:id])
     @company=Company.where(job_id: @job_id)
@@ -17,18 +17,18 @@ class JobsController < ApplicationController
   def index
     if params[:kategorije]
       @category_id=Category.find_by(id: params[:kategorije])
-      @company = Company.all
-      @job=Job.where(category_id: @category_id).order(created_at: :desc)
+      @company = Company.all.order(created_at: :desc)
+      @job=Job.where(category_id: @category_id)
     else
-      @company = Company.all
-      @job=Job.all.order(created_at: :desc)
+      @company = Company.all.order(created_at: :desc)
+      @job=Job.all
     end
     if params[:search]
       if Company.where("name LIKE ? ", "%#{params[:search]}%").count > 0
         @company = Company.where("name LIKE ? ", "%#{params[:search]}%")
         @job=Job.all.order(created_at: :desc)
       else
-        @company = Company.all
+        @company = Company.all.order(created_at: :desc)
         @job = Job.where("title LIKE ? ", "%#{params[:search]}%")
       end
     end
