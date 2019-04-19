@@ -9,7 +9,7 @@ class User < ApplicationRecord
     def self.everyday_update
       @user = User.all
       @user.each do |u|
-        UsersMailer.everyday_email(u).deliver
+        UserMailer.everyday_email(u).deliver
       end
     end
     #provjeriti ovo!

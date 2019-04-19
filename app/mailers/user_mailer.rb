@@ -6,9 +6,9 @@ class UserMailer < ApplicationMailer
       if (kategori.id == @user.category_id)
         @company = Company.all
         @job=Job.where(category_id: kategori.id).order(created_at: :desc)
-        mail(to: @user.email, subject: 'Every day email')
+        mail(to: @user.email, subject: 'Every day update')
       end
     end
   end
-  
+
 end
