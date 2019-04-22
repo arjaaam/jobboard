@@ -5,7 +5,7 @@
           <div class="item" name="category_id">Categories</div>
             <div class="menu">
               <% @category.each do |cat| %>
-                  <%=   link_to cat.name, root_path(:kategorije => cat.id), class: "item" %>
+                  <%= link_to cat.name, root_path(:kategorije => cat.id), class: "item" %>
               <% end %>
             </div>
        </div>

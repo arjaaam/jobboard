@@ -12,6 +12,5 @@ class User < ApplicationRecord
         UserMailer.everyday_email(u).deliver
       end
     end
-    #provjeriti ovo!
 
 end
