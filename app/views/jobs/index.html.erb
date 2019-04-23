@@ -8,8 +8,8 @@
 </div>
 <div class="ui container" style="padding-top:20px">
 <%= form_with url: 'users#create', :html => {:class => "ui form"} do |form| %>
-   <div class="inline fields">
-    <div class="five wide field">
+  <div class="inline fields">
+     <div class="five wide field">
       <label>Category</label>
       <input type="hidden" name="category_id">
       <div class="default text" name="category_id"></div>
@@ -17,10 +17,10 @@
              <%= form.collection_select :category_id, Category.all, :id, :name %>
           </div>
       </div>
-    <div class="eight wide field">
-      <label>sent to: </label>
-    <%= form.text_field :email %>
-    </div>
+      <div class="eight wide field">
+        <label>sent to: </label>
+      <%= form.text_field :email %>
+      </div>
       <label>every day! </label>
       <%= form.submit :Subscribe%>
   </div>
@@ -70,9 +70,9 @@
                           </div>
                         </div>
                     </div>
+                <% end %>
             <% end %>
-        <% end %>
+         <% end %>
       <% end %>
-    <% end %>
   <% end %>
 <% end %>

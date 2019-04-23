@@ -6,11 +6,11 @@ class User < ApplicationRecord
     message: 'Only valid emails allowed!!'
   }
 
-    def self.everyday_update
-      @user = User.all
-      @user.each do |u|
-        UserMailer.everyday_email(u).deliver
-      end
+  def self.everyday_update
+    @user = User.all
+    @user.each do |u|
+      UserMailer.everyday_email(u).deliver
     end
+  end
 
 end

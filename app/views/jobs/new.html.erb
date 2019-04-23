@@ -26,9 +26,9 @@
       <label>Category</label>
       <input type="hidden" name="category_id">
       <div class="default text" name="category_id"></div>
-          <div class="menu">
-             <%= form.collection_select :category_id, Category.all, :id, :name %>
-          </div>
+        <div class="menu">
+          <%= form.collection_select :category_id, Category.all, :id, :name %>
+        </div>
     </div>
     <div class="five wide field">
       <label>Job type</label>
@@ -81,53 +81,53 @@
     </div>
    <h4 class="ui dividing header">Apply link</h4>
    <div class="ten wide field" >
-       <div class="ui labeled input">
-           <div class="ui label" >
-             http://
-           </div>
-             <%= form.text_field :applylink %>
-        </div>
-  </div>
-   <h4 class="ui dividing header">Description</h4>
+     <div class="ui labeled input">
+       <div class="ui label" >
+          http://
+       </div>
+        <%= form.text_field :applylink %>
+      </div>
+   </div>
+  <h4 class="ui dividing header">Description</h4>
   </br></br></br></br>
   <input id="y"  type="hidden" name="description">
   <trix-editor input="y"></trix-editor>
   <h4 class="ui dividing header">Company Information</h4>
   <div class=" ten wide field" >
      <label>Name</label>
-       <div class=" field">
-          <%= form.text_field :name %>
-       </div>
+     <div class=" field">
+       <%= form.text_field :name %>
+    </div>
   </div>
   <div class=" ten wide field" >
-      <label>Company statement</label>
-      <div class=" field">
-         <%= form.text_field :company_statement %>
-      </div>
+    <label>Company statement</label>
+    <div class=" field">
+       <%= form.text_field :company_statement %>
+    </div>
   </div>
    <h4 class="ui dividing header">Website</h4>
-      <div class="five wide field" >
-         <div class="ui labeled input">
-             <div class="ui label" >
-               http://   
-             </div>
-                <%= form.text_field :url %>
-         </div>
-      </div>
-      <div class=" five wide field" >
-        <label>Email</label>
-          <div class=" field">
-            <%= form.text_field :email, id: :email, class: :email %>
-          </div>
-      </div>
-  <h4 class="ui dividing header">Details about company</h4>
-  </br></br></br></br>
-  <input id="x" type="hidden" name="company_description">
+   <div class="five wide field" >
+     <div class="ui labeled input">
+       <div class="ui label" >
+         http://
+       </div>
+       <%= form.text_field :url %>
+    </div>
+   </div>
+    <div class=" five wide field" >
+      <label>Email</label>
+        <div class=" field">
+          <%= form.text_field :email, id: :email, class: :email %>
+        </div>
+    </div>
+    <h4 class="ui dividing header">Details about company</h4>
+    </br></br></br></br>
+    <input id="x" type="hidden" name="company_description">
     <trix-editor input="x"></trix-editor>
-  <h4 class="ui dividing header">Logo</h4>
-  <div class="five wide field" >
+    <h4 class="ui dividing header">Logo</h4>
+    <div class="five wide field" >
       <%= form.file_field :image %>
-  </div>
-    <%= form.submit :Save%>
-  </div>
-<% end %>
+    </div>
+      <%= form.submit :Save%>
+    </div>
+  <% end %>

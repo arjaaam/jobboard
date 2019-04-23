@@ -35,16 +35,16 @@ class JobsController < ApplicationController
   end
 
   def create
-      @job=Job.new(job_params)
-      @job.save
-      @company=Company.new(company_params)
-      @company.job_id=@job.id
-      if @company.save
-        flash[:notice]="Job was successfully created"
-        redirect_to jobs_path
-      else
-        render 'new'
-      end
+    @job=Job.new(job_params)
+    @job.save
+    @company=Company.new(company_params)
+    @company.job_id=@job.id
+    if @company.save
+      flash[:notice]="Job was successfully created"
+      redirect_to jobs_path
+    else
+      render 'new'
+    end
   end
 
   private
